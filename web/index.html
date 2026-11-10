@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f4f9fc">
+    <meta name="description" content="The Chinhoyi University of Technology lost and found. Report, match, and manage item collections.">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" href="/cut-logo.png" type="image/png">
+    <link rel="stylesheet" href="/styles.css">
+    <title>CUT Lost &amp; Found — Chinhoyi University of Technology</title>
+  </head>
+  <body>
+    <div id="auth-screen" class="auth-screen">
+      <div class="auth-brand"><img class="brand-logo" src="/cut-logo.png" alt="Chinhoyi University of Technology logo"><span class="brand-name">CUT <span class="brand-accent">Lost &amp; Found</span></span></div>
+      <div class="auth-card">
+        <div class="eyebrow">CHINHOYI UNIVERSITY OF TECHNOLOGY</div>
+        <h1 id="auth-title">Lost something? Let's find it.</h1>
+        <p class="auth-copy">A trusted CUT service for reporting found property and recording its safe return.</p>
+        <form id="auth-form">
+          <label id="name-wrap" class="field hidden">Your name<input id="auth-name" name="name" autocomplete="name" minlength="2" maxlength="80"></label>
+          <label class="field">Email address<input id="auth-email" name="email" type="email" autocomplete="email" placeholder="Your CUT email address" required></label>
+          <label class="field">Password<input id="auth-password" name="password" type="password" autocomplete="current-password" minlength="10" placeholder="At least 10 characters" required></label>
+          <p id="auth-error" class="form-error" role="alert"></p>
+          <button id="auth-submit" class="button button-primary button-wide" type="submit">Sign in <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="auth-switch"><span id="auth-switch-copy">New to CUT Lost &amp; Found?</span> <button id="auth-toggle" class="text-button" type="button">Create an account</button></p>
+        <p class="privacy-note"><span aria-hidden="true">✳</span> CUT managers keep a collection register for future review.</p>
+      </div>
+      <div class="auth-aside"><span>✳</span> Found at CUT. Managed with care. Returned with a record.</div>
+    </div>
+
+    <div id="app-shell" class="app-shell hidden">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="CUT Lost and Found home"><img class="brand-logo" src="/cut-logo.png" alt=""><span class="brand-name">CUT <span class="brand-accent">Lost &amp; Found</span></span></a>
+        <div class="sidebar-label">CUT LOST &amp; FOUND</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-view="discover"><span class="nav-icon">⌕</span> Discover</button>
+          <button class="nav-link" data-view="matches"><span class="nav-icon">✳</span> Smart matches <span id="match-count" class="nav-count"></span></button>
+          <button class="nav-link" data-view="my-posts"><span class="nav-icon">▤</span> My posts</button>
+          <button class="nav-link" data-view="requests"><span class="nav-icon">↗</span> Messages <span id="request-count" class="nav-count"></span></button>
+          <button class="nav-link hidden" data-view="management"><span class="nav-icon">▣</span> Collection register</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="campus-card"><span class="campus-icon">⌂</span><div><span class="campus-caption">YOUR CAMPUS</span><strong id="campus-name">Chinhoyi University of Technology</strong></div></div>
+          <button id="signout-button" class="signout-button"><span class="avatar" id="sidebar-avatar">U</span><span id="sidebar-name">Your account</span><span class="signout-arrow">↗</span></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="mobile-brand"><img class="brand-logo" src="/cut-logo.png" alt=""><span class="brand-name">CUT <span class="brand-accent">Lost &amp; Found</span></span></div>
+          <div class="topbar-label">CHINHOYI UNIVERSITY OF TECHNOLOGY</div>
+          <button id="new-post-top" class="button button-dark"><span>＋</span> New post</button>
+        </header>
+        <div id="view-container" class="view-container" tabindex="-1"></div>
+      </main>
+      <nav class="mobile-nav" aria-label="Main navigation">
+        <button class="mobile-nav-link active" data-view="discover"><span>⌕</span>Discover</button>
+        <button class="mobile-nav-link" data-view="matches"><span>✳</span>Matches</button>
+        <button class="mobile-nav-link" data-view="my-posts"><span>▤</span>My posts</button>
+        <button class="mobile-nav-link" data-view="requests"><span>↗</span>Messages</button>
+        <button class="mobile-nav-link hidden" data-view="management"><span>▣</span>Register</button>
+      </nav>
+    </div>
+
+    <div id="modal-root"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "CUT Lost & Found",
+  "short_name": "CUT Lost & Found",
+  "description": "The Chinhoyi University of Technology lost-and-found and managed collection register.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f9fc",
+  "theme_color": "#1687bb",
+  "icons": [
+    { "src": "/cut-logo.png", "sizes": "892x892", "type": "image/png", "purpose": "any" }
+  ]
+}
